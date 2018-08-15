@@ -34,6 +34,9 @@ def render_sorted(csv_file, template, output = $stdout)
   end
 end
 
+# @param contacts [Array<Hash>]
+# @return [Hash<String, Array<Hash>] the given list of contacts, grouped by
+#   their +"Group"+ element
 def group_contacts(contacts)
   Hash.new { |hash, key| hash[key] = [] }.tap do |groups|
     contacts.each do |row|
