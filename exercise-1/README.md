@@ -1,3 +1,15 @@
+# Exercise 1
+
+## Example usage
+
+Install any missing gems first, with `bundler`.
+
+```sh
+./go.rb test/files/contacts.csv
+```
+
+## Original Requirements
+
 You have been provided a CSV containing a list of leads for a sales center.
 Each row includes key contact information and may or may not include responses
 to questions the center has asked. Some lead entries are unique and complete,
@@ -22,3 +34,21 @@ they have any answers at all).
 contacts who have answered it.
 
 4. Return each invalid record with an error message stating why it was rejected.
+
+
+## Development
+
+### Testing
+
+A few Rake commands will help your testing:
+
+  - `rake test`: Run the test suite
+  - `rake lint`: Run the code linters
+  - `rake`: Run all tests and linters
+
+### Guard
+
+To facilitate development, consider running `bundle exec guard` in the
+background while you work. Whenver a source file it changed, it will
+automatically run the relevent tests. This will provide you immediate test
+feedback at all times.

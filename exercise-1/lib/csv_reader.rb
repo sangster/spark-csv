@@ -1,4 +1,5 @@
 require 'csv'
+require 'pathname'
 
 # Reads a CSV file from a given path and returns its rows as an array of hashes.
 class CsvReader
@@ -6,7 +7,7 @@ class CsvReader
   include Enumerable
 
   attr_reader :path
-  def_delegator :to_a, :each
+  def_delegators :to_a, :each, :size, :-
 
   # @param [Pathname, #to_s] the path to the CSV file to read
   def initialize(path)
